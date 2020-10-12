@@ -19,6 +19,8 @@
       return $rs->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+
+
     function findOneById(\PDO $connexion, int $id) :array {
       $sql = "SELECT *, p.id as postId,
                         c.id as categorieId,
@@ -50,3 +52,19 @@
       $rs->execute();
       return $rs->fetchAll(\PDO::FETCH_ASSOC);
     }
+
+    function insert(\PDO $connexion, array $data) :int {
+      $sql = "INSERT INTO posts
+              SET title        = :title,
+                  text         = :text,
+                  quote        = :quote,
+                  category_id = :category,
+                  created_at   = CURRENT_TIMESTAMP();";
+      $rs = $connexion->prepare($sql);
+      $rs->bindValue(':title', $data['title'], \PDO::PARAM_STR);
+      $rs->bindValue(':text', $data['text'], \PDO::PARAM_STR);
+      $rs->bindValue(':quote', $data['quote'], \PDO::PARAM_INT);
+      $rs->bindValue(':category', $data['category_id'], \PDO::PARAM_INT);
+      $rs->execute();
+      return $connexion->lastInsertId();
+   }

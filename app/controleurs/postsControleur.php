@@ -32,3 +32,27 @@
         include '../app/vues/posts/show.php';
       $content = ob_get_clean();
     }
+
+    function addFormAction(\PDO $connexion) {
+
+      // Je vais chercher les catégories
+      include_once '../app/modeles/categoriesModele.php';
+      $categories = \App\Modeles\CategoriesModele\findAll($connexion);
+
+      // Je charge la vue addForm dans $content
+      GLOBAL $content, $title;
+      $title = TITRE_POSTS_ADDFORM;
+      ob_start();
+        include '../app/vues/posts/addForm.php';
+      $content = ob_get_clean();
+    }
+
+    function addAction(\PDO $connexion) {
+     // Je demande au modèle d'ajouter le post
+
+     include_once '../app/modeles/postsModele.php';
+     $id = \App\Modeles\PostsModele\insert($connexion, $_POST);
+
+     // Je redirige vers la liste des posts
+     header('location: ' . BASE_URL_PUBLIC . 'posts');
+  }

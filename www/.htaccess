@@ -13,20 +13,20 @@ RewriteEngine on
 #--------------------------------------------------
 
 
-  # DETAIL D'UN POST
-  # PATTERN: posts/{id}/{slug}
-  # URL: index.php?postID=x
-    RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?postID=$1 [L]
+   # DETAIL D'UN POST
+   # PATTERN: posts/{id}/{slug}
+   # URL: index.php?postID=x
+     RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?postID=$1 [L]
 
-  # DETAIL D'UNE CATEGORIE
-  # PATTERN: categories/{id}/{slug}
-  # URL: index.php?categorieID=x
-    RewriteRule ^categories\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)$ index.php?categorieID=$1 [L]
+   # AJOUT D'UN POST: affichage du formulaire
+   # PATTERN: /posts/add/form.html
+   # URL: index.php?posts=addForm
+     RewriteRule ^posts\/add\/form.html$ index.php?posts=addForm [L]
 
-  # PAGE DE CONTACT
-  # PATTERN: contact
-  # URL: index.php?contact
-    RewriteRule ^contact$ index.php?contact [L]
+   # AJOUT POSTS: INSERT
+   # PATTERN: /posts/add/insert.html
+   # URL: index.php?posts=add
+     RewriteRule ^posts\/add\/insert.html$ index.php?posts=add [L]
 
 #--------------------------------------------------
 

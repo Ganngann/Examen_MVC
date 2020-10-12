@@ -13,4 +13,6 @@
     $title   = '';
     $content = '';
     // TEXTES
-    define('TITRE_USERS_LOGINFORM', "Connexion to the backoffice");
+      define('TITRE_CATEGORIES_INDEX', "Liste des catégories");
+      define('TITRE_POSTS_ADDFORM', "Ajout d'un post");
+      define('TITRE_POSTS_EDITFORM', "Edition d'un post");
