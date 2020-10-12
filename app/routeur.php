@@ -57,6 +57,16 @@ elseif (isset($_GET['posts']) and $_GET['posts'] == 'edit'):
 
 
 
+// SUPPRESSION POSTS
+// PATTERN: index.php?posts=delete&id=x
+// CTRL: postsControleur
+// ACTION: delete
+elseif (isset($_GET['posts']) and $_GET['posts'] == 'delete'):
+   include_once '../app/controleurs/postsControleur.php';
+   \App\Controleurs\PostsControleur\deleteAction($connexion, $_GET['id']);
+
+
+
 // ROUTE PAR DEFAUT
 // PATTERN: /
 // CTRL: postsControleur
