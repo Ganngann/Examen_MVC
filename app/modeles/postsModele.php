@@ -35,9 +35,9 @@
     }
 
     function findNumberOfPostsByCategorie(\PDO $connexion) {
-      $sql = "SELECT COUNT(id) AS nbrPostsByCategory, categorie_id
+      $sql = "SELECT COUNT(id) AS nbrPostsByCategory, category_id
               FROM posts
-              GROUP BY categorie_id;";
+              GROUP BY category_id;";
       $rs = $connexion -> query($sql);
       return $rs->fetchAll(\PDO::FETCH_ASSOC);
     }

@@ -14,10 +14,10 @@
       // Je mets dans $nbrPosts le nombre de posts que contient chaque catégorie
       include_once '../app/modeles/postsModele.php';
       $nbrPosts = \App\Modeles\PostsModele\findNumberOfPostsByCategorie($connexion);
-
       // Je charge directement la vue index
         include '../app/vues/categories/index.php';
     }
+
 
     function showAction(\PDO $connexion, int $id) {
       // Je mets dans $categorie les infos de la catégorie que je demande au modèle
