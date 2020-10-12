@@ -16,17 +16,27 @@ RewriteEngine on
    # DETAIL D'UN POST
    # PATTERN: posts/{id}/{slug}
    # URL: index.php?postID=x
-     RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?postID=$1 [L]
+   RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?postID=$1 [L]
 
    # AJOUT D'UN POST: affichage du formulaire
    # PATTERN: /posts/add/form.html
    # URL: index.php?posts=addForm
-     RewriteRule ^posts\/add\/form.html$ index.php?posts=addForm [L]
+   RewriteRule ^posts\/add\/form.html$ index.php?posts=addForm [L]
 
    # AJOUT POSTS: INSERT
    # PATTERN: /posts/add/insert.html
    # URL: index.php?posts=add
-     RewriteRule ^posts\/add\/insert.html$ index.php?posts=add [L]
+   RewriteRule ^posts\/add\/insert.html$ index.php?posts=add [L]
+
+   # EDITION POSTS: FORMULAIRE
+   # PATTERN: /posts/id/slug-du-post/edit/form.html
+   # URL: index.php?posts=editForm&id=x
+   RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)\/edit\/form.html$ index.php?posts=editForm&id=$1 [L]
+
+   # EDITION POSTS: UPDATE
+   # PATTERN: /posts/id/slug-du-post/edit/update.html
+   # URL: index.php?posts=editForm&id=x
+   RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)\/edit\/update.html$ index.php?posts=edit&id=$1 [L]
 
 #--------------------------------------------------
 

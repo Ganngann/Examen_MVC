@@ -24,7 +24,6 @@
       // Je mets dans $post les infos du post que je demande au modèle
       include_once '../app/modeles/postsModele.php';
       $post = PostsModele\findOneById($connexion, $id);
-
       // Je charge la vue show dans $content
       GLOBAL $content, $title;
       $title = $post['title'];
@@ -34,11 +33,9 @@
     }
 
     function addFormAction(\PDO $connexion) {
-
       // Je vais chercher les catégories
       include_once '../app/modeles/categoriesModele.php';
       $categories = \App\Modeles\CategoriesModele\findAll($connexion);
-
       // Je charge la vue addForm dans $content
       GLOBAL $content, $title;
       $title = TITRE_POSTS_ADDFORM;
@@ -49,10 +46,31 @@
 
     function addAction(\PDO $connexion) {
      // Je demande au modèle d'ajouter le post
-
      include_once '../app/modeles/postsModele.php';
      $id = \App\Modeles\PostsModele\insert($connexion, $_POST);
-
      // Je redirige vers la liste des posts
      header('location: ' . BASE_URL_PUBLIC . 'posts');
   }
+
+  function editFormAction(\PDO $connexion, int $id) {
+    // Je demande au modèle de trouver le post correspondant
+    include_once '../app/modeles/postsModele.php';
+    $post = PostsModele\findOneById($connexion, $id);
+    // Je vais chercher les catégories
+    include_once '../app/modeles/categoriesModele.php';
+    $categories = \App\Modeles\CategoriesModele\findAll($connexion);
+    // Je charge la vue editForm dans content
+    GLOBAL $content, $title;
+    $title = TITRE_POSTS_EDITFORM;
+    ob_start();
+     include '../app/vues/posts/editForm.php';
+    $content = ob_get_clean();
+}
+
+function editAction(\PDO $connexion, int $id) {
+  // Je demande au modèle d'updater le post
+  include_once '../app/modeles/postsModele.php';
+  $return2 = PostsModele\updateOneById($connexion, $id, $_POST);
+  // Je redirige vers la liste des posts
+  header('location: ' . BASE_URL_PUBLIC . 'posts');
+}

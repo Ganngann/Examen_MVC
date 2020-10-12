@@ -37,6 +37,26 @@ elseif (isset($_GET['posts']) and $_GET['posts'] == 'add'):
 
 
 
+// EDITION POSTS: FORMULAIRE
+// PATTERN: index.php?posts=editForm
+// CTRL: postsControleur
+// ACTION: editForm
+elseif (isset($_GET['posts']) and $_GET['posts'] == 'editForm'):
+   include_once '../app/controleurs/postsControleur.php';
+   \App\Controleurs\PostsControleur\editFormAction($connexion, $_GET['id']);
+
+
+
+// EDITION POSTS: UPDATE
+// PATTERN: index.php?posts=edit&id=x
+// CTRL: postsControleur
+// ACTION: edit
+elseif (isset($_GET['posts']) and $_GET['posts'] == 'edit'):
+   include_once '../app/controleurs/postsControleur.php';
+   \App\Controleurs\PostsControleur\editAction($connexion, $_GET['id']);
+
+
+
 // ROUTE PAR DEFAUT
 // PATTERN: /
 // CTRL: postsControleur

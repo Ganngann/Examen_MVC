@@ -20,7 +20,6 @@ Variables disponibles:
    <!-- Blog Post Start -->
    <div class="col-md-12 blog-post">
       <?php foreach ($posts as $post):?>
-
       <div class="post-title">
          <a href="posts/<?php echo $post['postId']; ?>/<?php echo \Noyau\Fonctions\slugify($post['title']); ?>.html"><h1><?php echo $post['title']; ?></h1></a>
       </div>

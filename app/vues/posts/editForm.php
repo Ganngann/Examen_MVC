@@ -1,7 +1,7 @@
 <?php
 
 /*
-./app/vues/posts/addForm.php
+./app/vues/posts/editForm.php
 */
 
 ?>
@@ -23,25 +23,25 @@
       <!-- Post Headline End -->
 
       <!-- Form Start -->
-      <form action="posts/add/insert.html" method="post">
+      <form action="posts/<?php echo $post['postId']; ?>/<?php echo \Noyau\Fonctions\slugify($post['title']); ?>/edit/update.html" method="post">
          <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="Enter your title here" />
+            <input type="text" name="title" id="title" class="form-control" placeholder="Enter your title here" value="<?php echo $post['title']; ?>" />
          </div>
          <div class="form-group">
             <label for="text">Text</label>
-            <textarea id="text" name="text" class="form-control" rows="5" placeholder="Enter your text here"></textarea>
+            <textarea id="text" name="text" class="form-control" rows="5" placeholder="Enter your text here"><?php echo $post['text']; ?></textarea>
          </div>
          <div class="form-group">
             <label for="quote">Quote</label>
-            <textarea id="quote" name="quote" class="form-control" rows="5" placeholder="Enter your quote here"></textarea>
+            <textarea id="quote" name="quote" class="form-control" rows="5" placeholder="Enter your quote here"><?php echo $post['quote']; ?></textarea>
          </div>
          <div class="form-group">
             <label for="text">Category</label>
             <select id="category" name="category_id" class="form-control">
                <option disabled selected>Select your category</option>
                <?php foreach ($categories as $categorie): ?>
-                  <option value="<?php echo $categorie['id']; ?>"><?php echo $categorie['name']; ?></option>
+                  <option value="<?php echo $categorie['id']; ?>" <?php if($categorie['id'] == $post['categorieId']) {echo 'selected="selected"';}?>><?php echo $categorie['name']; ?></option>
                <?php endforeach; ?>
             </select>
          </div>
