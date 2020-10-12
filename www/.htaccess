@@ -1,0 +1,43 @@
+#--------------------------------------------------
+# Répertoire : /
+#--------------------------------------------------
+
+# Le serveur doit suivre les liens symboliques :
+Options +FollowSymlinks
+
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+
+#--------------------------------------------------
+# Règles de réécriture d'URL:
+#--------------------------------------------------
+
+  # FORMULAIRE DE LOGIN
+  # PATTERN: users/login/form
+  # URL: index.php?users=loginForm
+    RewriteRule ^users\/login\/form$ index.php?users=loginForm [L]
+
+  # CONNEXION
+  # PATTERN: users/login/submit
+  # URL: index.php?users=login
+    RewriteRule ^users\/login\/submit$ index.php?users=login [L]
+
+  # DETAIL D'UN POST
+  # PATTERN: posts/{id}/{slug}
+  # URL: index.php?postID=x
+    RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)$ index.php?postID=$1 [L]
+
+  # DETAIL D'UNE CATEGORIE
+  # PATTERN: categories/{id}/{slug}
+  # URL: index.php?categorieID=x
+    RewriteRule ^categories\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)$ index.php?categorieID=$1 [L]
+
+  # PAGE DE CONTACT
+  # PATTERN: contact
+  # URL: index.php?contact
+    RewriteRule ^contact$ index.php?contact [L]
+
+#--------------------------------------------------
+
+RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
+RewriteRule ^(.*)$ index.php [L]
