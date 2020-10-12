@@ -3,7 +3,7 @@
 /*
 ./app/vues/posts/show.php
 Variables disponibles:
-- $post ARRAY(id, title, content, created_at, image, author_id, categorie_id))
+- $post ARRAY(postId, title, text, postDate, quote, categorieId, categorieName))
 */
 
 ?>
@@ -28,7 +28,7 @@ Variables disponibles:
 
       <!-- Post Detail Start -->
       <div class="post-info">
-         <span><?php echo date('F d, Y', strtotime($post['postDate'])); ?></span> | <span><?php echo $post['categorieName']?></span>
+         <span><?php echo Noyau\Fonctions\datify($post['postDate'],'F d, Y'); ?></span> | <span><?php echo $post['categorieName']?></span>
       </div>
       <!-- Post Detail End -->
 
@@ -46,7 +46,7 @@ Variables disponibles:
       <!-- Post Buttons -->
       <div>
          <a href="posts/<?php echo $post['postId']?>/<?php echo \Noyau\Fonctions\slugify($post['title']); ?>/edit/form.html" type="button" class="btn btn-primary">Edit Post</a>
-         <a href="posts/<?php echo $post['postId']?>/<?php echo \Noyau\Fonctions\slugify($post['title']); ?>/delete.html" type="button" class="btn btn-secondary" role="button">Delete Post</a>
+         <a href="posts/<?php echo $post['postId']?>/<?php echo \Noyau\Fonctions\slugify($post['title']); ?>/delete.html" type="button" class="btn btn-secondary delete" role="button">Delete Post</a>
       </div>
       <!-- Post Buttons End -->
 

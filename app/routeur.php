@@ -27,7 +27,7 @@ elseif (isset($_GET['posts']) and $_GET['posts'] == 'addForm'):
 
 
 
-// AJOUT POSTS: INSERT
+// AJOUT D'UN POSTS: INSERT
 // PATTERN: index.php?posts=add
 // CTRL: postsControleur
 // ACTION: add
@@ -37,7 +37,7 @@ elseif (isset($_GET['posts']) and $_GET['posts'] == 'add'):
 
 
 
-// EDITION POSTS: FORMULAIRE
+// EDITION D'UN POSTS: FORMULAIRE
 // PATTERN: index.php?posts=editForm
 // CTRL: postsControleur
 // ACTION: editForm
@@ -47,7 +47,7 @@ elseif (isset($_GET['posts']) and $_GET['posts'] == 'editForm'):
 
 
 
-// EDITION POSTS: UPDATE
+// EDITION D'UN POSTS: UPDATE
 // PATTERN: index.php?posts=edit&id=x
 // CTRL: postsControleur
 // ACTION: edit
@@ -57,7 +57,7 @@ elseif (isset($_GET['posts']) and $_GET['posts'] == 'edit'):
 
 
 
-// SUPPRESSION POSTS
+// SUPPRESSION D'UN POSTS
 // PATTERN: index.php?posts=delete&id=x
 // CTRL: postsControleur
 // ACTION: delete

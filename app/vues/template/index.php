@@ -24,7 +24,7 @@
       <div class="container">
          <div class="row">
 
-
+<!-- je ne suis pas en accord avec le découpage du template d'origine, qui concidere la sidebar comme fesant partie du main. ors, en l'occurence, elle a plutot le role du header/nav -->
 
 
             <?php include '../app/vues/template/partials/_sideBar.php'; ?>

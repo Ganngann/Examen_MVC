@@ -2,6 +2,8 @@
 
 /*
 ./app/vues/posts/editForm.php
+Variables disponibles:
+- $post ARRAY(postId, title, text, postDate, quote, categorieId, categorieName))
 */
 
 ?>
@@ -23,7 +25,7 @@
       <!-- Post Headline End -->
 
       <!-- Form Start -->
-      <form action="posts/<?php echo $post['postId']; ?>/<?php echo \Noyau\Fonctions\slugify($post['title']); ?>/edit/update.html" method="post">
+      <form class="edit" action="posts/<?php echo $post['postId']; ?>/<?php echo \Noyau\Fonctions\slugify($post['title']); ?>/edit/update.html" method="post">
          <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="title" id="title" class="form-control" placeholder="Enter your title here" value="<?php echo $post['title']; ?>" />
