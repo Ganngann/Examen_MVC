@@ -20,7 +20,7 @@
   <meta name="copyright" content="company name">
   <meta name="robots" content="index,follow">
 
-  <base href="<?php echo BASE_URL_PUBLIC; ?>" target="_top">
+  <base href="<?php echo BASE_URL; ?>" target="_top">
   <title>Alex Parker - <?php echo $title; ?></title>
 
   <!-- Favicon -->

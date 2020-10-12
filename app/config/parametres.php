@@ -13,6 +13,5 @@
     $title   = '';
     $content = '';
     // TEXTES
-      define('TITRE_CATEGORIES_INDEX', "Liste des catégories");
-      define('TITRE_POSTS_ADDFORM', "Ajout d'un post");
-      define('TITRE_POSTS_EDITFORM', "Edition d'un post");
+      define('TITRE_POSTS_ADDFORM', "Add a post");
+      define('TITRE_POSTS_EDITFORM', "Edit a post");

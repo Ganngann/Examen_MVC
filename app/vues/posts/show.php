@@ -28,7 +28,7 @@ Variables disponibles:
 
       <!-- Post Detail Start -->
       <div class="post-info">
-         <span><?php echo date('F d, Y', strtotime($post['created_at'])); ?></span> | <span><?php echo $post['categorieName']?></span>
+         <span><?php echo date('F d, Y', strtotime($post['postDate'])); ?></span> | <span><?php echo $post['categorieName']?></span>
       </div>
       <!-- Post Detail End -->
 

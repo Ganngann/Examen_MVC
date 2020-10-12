@@ -24,7 +24,7 @@ Variables disponibles:
          <a href="posts/<?php echo $post['postId']; ?>/<?php echo \Noyau\Fonctions\slugify($post['title']); ?>.html"><h1><?php echo $post['title']; ?></h1></a>
       </div>
       <div class="post-info">
-         <span><?php echo date('Y\-m\-d', strtotime($post['created_at'])); ?></span> | <span><?php echo $post['categorieName']; ?></span>
+         <span><?php echo date('Y\-m\-d', strtotime($post['postDate'])); ?></span> | <span><?php echo $post['categorieName']; ?></span>
       </div>
       <p><?php echo \Noyau\Fonctions\tronquer($post['text'], 150); ?>
       </p>
