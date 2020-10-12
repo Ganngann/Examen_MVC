@@ -7,7 +7,10 @@
     namespace App\Modeles\PostsModele;
 
     function findAll(\PDO $connexion) {
-      $sql = "SELECT *
+      $sql = "SELECT *, p.id as postId,
+                        c.id as categorieId,
+                        c.name as categorieName
+
               FROM posts p
               JOIN categories c on p.category_id = c.id
               ORDER BY p.created_at DESC
@@ -17,9 +20,12 @@
     }
 
     function findOneById(\PDO $connexion, int $id) :array {
-      $sql = "SELECT *
-              FROM posts
-              WHERE id = :id;";
+      $sql = "SELECT *, p.id as postId,
+                        c.id as categorieId,
+                        c.name as categorieName
+              FROM posts p
+              JOIN categories c on p.category_id = c.id
+              WHERE p.id = :id;";
       $rs = $connexion->prepare($sql);
       $rs->bindValue(':id', $id, \PDO::PARAM_INT);
       $rs->execute();

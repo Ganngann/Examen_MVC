@@ -12,20 +12,11 @@ RewriteEngine on
 # Règles de réécriture d'URL:
 #--------------------------------------------------
 
-  # FORMULAIRE DE LOGIN
-  # PATTERN: users/login/form
-  # URL: index.php?users=loginForm
-    RewriteRule ^users\/login\/form$ index.php?users=loginForm [L]
-
-  # CONNEXION
-  # PATTERN: users/login/submit
-  # URL: index.php?users=login
-    RewriteRule ^users\/login\/submit$ index.php?users=login [L]
 
   # DETAIL D'UN POST
   # PATTERN: posts/{id}/{slug}
   # URL: index.php?postID=x
-    RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)$ index.php?postID=$1 [L]
+    RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?postID=$1 [L]
 
   # DETAIL D'UNE CATEGORIE
   # PATTERN: categories/{id}/{slug}
