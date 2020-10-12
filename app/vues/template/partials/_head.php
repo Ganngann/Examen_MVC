@@ -21,7 +21,7 @@
   <meta name="robots" content="index,follow">
 
   <base href="<?php echo BASE_URL_PUBLIC; ?>" target="_top">
-  <title>DevBlog - <?php echo $title; ?></title>
+  <title>Alex Parker - <?php echo $title; ?></title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/favicon/favicon.ico">

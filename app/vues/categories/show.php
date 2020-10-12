@@ -7,6 +7,3 @@
   */
 
 ?>
-
-<h1><?php echo $categorie['name']; ?></h1>
-<?php include '../app/vues/posts/liste.php'; ?>

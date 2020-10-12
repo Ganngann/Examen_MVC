@@ -12,13 +12,9 @@
       include_once '../app/modeles/postsModele.php';
       $posts = PostsModele\findAll($connexion);
 
-      // Je vais chercher la liste des tags correspondant à un post
-      include_once '../app/modeles/tagsModele.php';
-      $tags = \App\Modeles\TagsModele\findTagsOfPost($connexion);
-
       // Je charge la vue posts/index dans $content
       GLOBAL $content, $title;
-      $title = "Wedding | Template";
+      $title = "Blog";
       ob_start();
         include '../app/vues/posts/index.php';
       $content = ob_get_clean();
