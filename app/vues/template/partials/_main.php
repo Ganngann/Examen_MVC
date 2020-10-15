@@ -11,23 +11,13 @@
    <div class="col-md-12 page-body">
       <div class="row">
 
-
          <?php echo $content; ?>
-
-
 
       </div>
 
    </div>
 
-
-
-
-
-
-
-<?php include '../app/vues/template/partials/_footer.php'; ?>
-
+   <?php include '../app/vues/template/partials/_footer.php'; ?>
 
 </div>
 <!-- Blog Post (Right Sidebar) End -->

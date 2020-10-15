@@ -17,3 +17,4 @@
 
 <!-- surcharge -->
 <script type="text/javascript" src="js/app.js"></script>
+<script src="https://kit.fontawesome.com/c7657912ce.js" crossorigin="anonymous"></script>

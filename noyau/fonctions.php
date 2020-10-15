@@ -11,7 +11,7 @@ namespace Noyau\Fonctions;
 /**
  * [slugify transforme une chaine en slug]
  * @param  string $str [chaine à transformer]
- * @return [type]      [slug]
+ * @return string      [slug]
  */
 function slugify(string $str) {
    return trim(preg_replace(array('/[^a-zA-Z0-9 -]/', '/[ -]+/', '/^-|-$/'), array('', '-', ''), strtolower($str)), '-');
@@ -36,7 +36,7 @@ function tronquer(string $chaine, int $nbreCaracteres = 200) :string {
  * [datify formateur de date]
  * @param  string $date   [string contenant la date]
  * @param  string $format [format de date php]
- * @return [type]         [date formatée]
+ * @return string         [date formatée]
  */
 
 function datify(string $date, string $format) {

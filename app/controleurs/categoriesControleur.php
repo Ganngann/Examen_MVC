@@ -11,7 +11,6 @@ use App\Modeles\CategoriesModele;
 /**
  * [indexAction liste des catégories]
  * @param  PDO    $connexion [connexion à la db]
- * @return [type]            [description]
  */
 function indexAction(\PDO $connexion) {
    // Je mets dans $categories la liste des 10 dernières catégories que je demande au modèle
