@@ -72,7 +72,7 @@ function editAction(\PDO $connexion, int $id) {
    include_once '../app/modeles/postsModele.php';
    $return1 = PostsModele\updateOneById($connexion, $id, $_POST);
    // Je redirige vers la liste des posts
-   header('location: ' . BASE_URL);
+   header('location: ' . BASE_URL .'posts/'. $id . '/' .\Noyau\Fonctions\slugify($_POST['title']) . '.html');
 }
 
 function deleteAction(\PDO $connexion, int $id) {
